@@ -6,7 +6,9 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strconv"
 	"time"
 
@@ -15,20 +17,46 @@ import (
 
 // Web sitelerini tanımla
 var forums = []struct {
+	name        string
 	url         string
 	elementPath string // HTML seçicileri
 }{
-	{"http://bbzzzsvqcrqtki6umym6itiixfhni37ybtt7mkbjyxn2pgllzxf2qgyd.onion/th-all-threads/newest", "div.structItem:nth-child(1)"},
-	{"http://darkobds5j7xpsncsexzwhzaotyc4sshuiby3wtxslq5jy2mhrulnzad.onion/darkzone-forum/forum/darkzone-forum-community/", "div.content-element:nth-child(1) > div:nth-child(2)"},
-	{"http://b7ehf7dabxevdsm5szkn2jecnliwzoxlsn4lijxqxikrlykbbsfrqfad.onion/", "div#q606.qa-q-list-item.qa-q-list-item-featured"},
-	{"http://xh6liiypqffzwnu5734ucwps37tn2g6npthvugz3gdoqpikujju525yd.onion/", "#q297120"},
-	{"https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/", "li.post-item:nth-child(2)"},
-	{"http://weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.onion/", "div.card:nth-child(1)"},
-	{"http://forums56xf3ix34sooaio4x5n275h4i7ktliy4yphhxohuemjpqovrad.onion/forums/general-discussion.9/", "div.structItem:nth-child(1) > div:nth-child(2)"},
-	{"http://suprbaydvdcaynfo4dgdzgxb4zuso7rftlil5yg5kqjefnw4wq4ulcad.onion/", "table.tborder:nth-child(1)"},
-	{"http://7eoz4h2nvw4zlr7gvlbutinqqpm546f5egswax54az6lt2u7e3t6d7yd.onion/", "#q13246"},
-	{"http://raworldw32b2qxevn3gp63pvibgixr4v75z62etlptg3u3pmajwra4ad.onion/", "div.col-md-9:nth-child(2)"},
-	{"http://mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion/", "div.col-lg-4:nth-child(1)"},
+	{"Breaking Bad", "http://bbzzzsvqcrqtki6umym6itiixfhni37ybtt7mkbjyxn2pgllzxf2qgyd.onion/th-all-threads/newest", "div.structItem:nth-child(1)"},
+	{"Darkzone", "http://darkobds5j7xpsncsexzwhzaotyc4sshuiby3wtxslq5jy2mhrulnzad.onion/darkzone-forum/forum/darkzone-forum-community/", "div.content-element:nth-child(1) > div:nth-child(2)"},
+	{"DeepWeb Question and Answers", "http://b7ehf7dabxevdsm5szkn2jecnliwzoxlsn4lijxqxikrlykbbsfrqfad.onion/", "div#q606.qa-q-list-item.qa-q-list-item-featured"},
+	{"Respostas Ocultas", "http://xh6liiypqffzwnu5734ucwps37tn2g6npthvugz3gdoqpikujju525yd.onion/", "#q297120"},
+	{"Out3r Space", "https://reycdxyc24gf7jrnwutzdn3smmweizedy7uojsa7ols6sflwu25ijoyd.onion/archives/", "li.post-item:nth-child(2)"},
+	{"BlackSuit", "http://weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.onion/", "div.card:nth-child(1)"},
+	{"DarkWeb Forums", "http://forums56xf3ix34sooaio4x5n275h4i7ktliy4yphhxohuemjpqovrad.onion/forums/general-discussion.9/", "div.structItem:nth-child(1) > div:nth-child(2)"},
+	{"Suprbay", "http://suprbaydvdcaynfo4dgdzgxb4zuso7rftlil5yg5kqjefnw4wq4ulcad.onion/", "table.tborder:nth-child(1)"},
+	{"Hidden Answers", "http://7eoz4h2nvw4zlr7gvlbutinqqpm546f5egswax54az6lt2u7e3t6d7yd.onion/", "#q13246"},
+	{"RA World", "http://raworldw32b2qxevn3gp63pvibgixr4v75z62etlptg3u3pmajwra4ad.onion/", "div.col-md-9:nth-child(2)"},
+	{"Wall of Shame", "http://mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion/", "div.col-lg-4:nth-child(1)"},
+}
+
+// Tarayıcıyı otomatik olarak açmak için fonksiyon
+func openBrowser(url string) {
+	var cmd string
+	var args []string
+
+	// İşletim sistemine göre farklı komutlar belirlenir
+	switch runtime.GOOS {
+	case "windows":
+		cmd = "rundll32"
+		args = []string{"url.dll,FileProtocolHandler", url}
+	case "darwin":
+		cmd = "open"
+		args = []string{url}
+	default: // "linux", "freebsd", "openbsd", "netbsd"
+		cmd = "xdg-open"
+		args = []string{url}
+	}
+
+	// Komutu çalıştırır
+	err := exec.Command(cmd, args...).Start()
+	if err != nil {
+		log.Fatal("Tarayıcı açılamadı:", err)
+	}
 }
 
 // Element ekran görüntüsü alma ve link çekme işlevi
@@ -107,7 +135,7 @@ func renderIndex(w http.ResponseWriter, r *http.Request) {
             <label for="forum-select">Bir Forum Seçin:</label>
             <select id="forum-select" name="forum">`)
 	for i, forum := range forums {
-		fmt.Fprintf(w, `<option value="%d">%s</option>`, i, forum.url)
+		fmt.Fprintf(w, `<option value="%d">%s</option>`, i, forum.name) // Forum isimlerini gösteriyoruz
 	}
 	fmt.Fprint(w, `</select>
             <button type="submit">Ekran Görüntüsü Al</button>
@@ -148,6 +176,10 @@ func main() {
 	http.HandleFunc("/screenshot", screenshotHandler)
 
 	fmt.Println("Sunucu http://localhost:8080 adresinde başlatıldı.")
+
+	// Tarayıcıyı otomatik olarak aç
+	go openBrowser("http://localhost:8080")
+
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
