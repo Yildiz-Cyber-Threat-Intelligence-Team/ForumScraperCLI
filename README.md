@@ -9,7 +9,7 @@
 
 <h2>Kullanım</h2>
 Uygulamayı çalıştırmak için proje dizinine gidin ve şu komutu çalıştırın: <br>
-```go run main.go```
+`go run main.go`
 
 
 Sunucu **'http://localhost:8080'** adresinde başlayacaktır. Tarayıcınızı açın ve bu adrese giderek forum izleme aracına erişin.
