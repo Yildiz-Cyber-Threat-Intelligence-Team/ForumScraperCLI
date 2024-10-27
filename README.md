@@ -13,6 +13,12 @@ Uygulamayı çalıştırmak için proje dizinine gidin ve şu komutu çalıştı
 go
 go run main.go
 ```
+Some basic Git commands are:
+```
+git status
+git add
+git commit
+```
 
 
 Sunucu **'http://localhost:8080'** adresinde başlayacaktır. Tarayıcınızı açın ve bu adrese giderek forum izleme aracına erişin.
