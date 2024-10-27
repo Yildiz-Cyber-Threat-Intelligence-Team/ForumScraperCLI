@@ -7,7 +7,7 @@
 
 - **Otomatik Kazıma**: Çeşitli forumlardan veri toplar.
 - **Gerçek Zamanlı İzleme**: Tartışmaları ve konuları anlık olarak izler.
-- **Esnek Konfigürasyon**: Forum URL'lerini ve HTML öğesi seçicilerini kolayca ekleyebilir veya değiştirebilirsiniz.
+- **Esnek Konfigürasyon**: Forum URL'lerini ve CSS öğesi seçicilerini kolayca ekleyebilir veya değiştirebilirsiniz.
 
 <h2>Kullanım</h2>
 Uygulamayı çalıştırmak için proje dizinine gidin ve şu komutu çalıştırın: <br>
