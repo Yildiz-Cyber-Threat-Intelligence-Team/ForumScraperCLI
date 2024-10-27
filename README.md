@@ -1,5 +1,7 @@
 <h1> ForumScraperCLI </h1>
- **ForumScraperCLI** , otomatik forum izlemeye yönelik bir komut satırı aracıdır. En az 10 forumdaki gönderileri sıyırıp tartışmaları, konuları ve anahtar kelimeleri gerçek zamanlı olarak izliyor. Bu araç, forum gönderilerini toplama sürecini basitleştirir; istihbarat toplamak ve forum etkinlikleriyle ilgili güncel bilgileri korumak için idealdir.
+
+ ***ForumScraperCLI***
+ , otomatik forum izlemeye yönelik bir komut satırı aracıdır. En az 10 forumdaki gönderileri sıyırıp tartışmaları, konuları ve anahtar kelimeleri gerçek zamanlı olarak izliyor. Bu araç, forum gönderilerini toplama sürecini basitleştirir; istihbarat toplamak ve forum etkinlikleriyle ilgili güncel bilgileri korumak için idealdir.
 
 <h2>Özellikler</h2>
 
@@ -9,24 +11,14 @@
 
 <h2>Kullanım</h2>
 Uygulamayı çalıştırmak için proje dizinine gidin ve şu komutu çalıştırın: <br>
-```
-go
-go run main.go
-```
-Some basic Git commands are:
-```
-git status
-git add
-git commit
-```
 
+<frameset><blockquote> <b> go run main.go </b> </blockquote> </frameset>  
+Sunucu <a href="http://localhost:8080'">http://localhost:8080'</a> adresinde başlayacaktır. Tarayıcınızı açın ve  <a href="http://localhost:8080'">bu adrese </a> giderek forum izleme aracına erişin. <br> <br>
 
-Sunucu **'http://localhost:8080'** adresinde başlayacaktır. Tarayıcınızı açın ve bu adrese giderek forum izleme aracına erişin.
 <img src="terminal.png" />
-
 
 <h2>Gönderileri Kazıma</h2>
 <img src="menu.png" />
-1.Açılır menüden bir forum seçin. <br>
-2.Seçilen forumdan ekran görüntüsü almak ve bağlantıları çekmek için "Ekran Görüntüsü Al" butonuna tıklayın. <br>
-Uygulama, ilgili foruma giderek son gönderiyi alacak ve bağlantısını **'links.txt'** dosyasına ekleyecektir.
+<b>1.</b>Açılır menüden bir forum seçin. <br>
+<b>2.</b>Seçilen forumdan ekran görüntüsü almak ve bağlantıları çekmek için <b>Ekran Görüntüsü Al </b>butonuna tıklayın. <br>
+Uygulama, ilgili foruma giderek son gönderiyi alacak ve bağlantısını <b>links.txt</b> dosyasına ekleyecektir.
