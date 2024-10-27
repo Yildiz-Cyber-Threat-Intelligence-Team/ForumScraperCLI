@@ -13,12 +13,12 @@
 Uygulamayı çalıştırmak için proje dizinine gidin ve şu komutu çalıştırın: <br>
 
 <frameset><blockquote> <b> go run main.go </b> </blockquote> </frameset>  
-Sunucu <a href="http://localhost:8080'">http://localhost:8080'</a> adresinde başlayacaktır. Tarayıcınızı açın ve  <a href="http://localhost:8080'">bu adrese </a> giderek forum izleme aracına erişin. <br> <br>
+Sunucu <a href="http://localhost:8080'">http://localhost:8080'</a> adresinde başlayacaktır. Tarayıcınız otomatik açılır ve <a href="http://localhost:8080'">  bu adrese </a> giderek forum izleme aracına erişir. <br> <br>
 
 <img src="terminal.png" />
 
 <h2>Gönderileri Kazıma</h2>
 <img src="menu.png" />
-<b>1.</b>Açılır menüden bir forum seçin. <br>
-<b>2.</b>Seçilen forumdan ekran görüntüsü almak ve bağlantıları çekmek için <b>Ekran Görüntüsü Al </b>butonuna tıklayın. <br>
+<b>1.</b> Açılır menüden bir forum seçin. <br>
+<b>2.</b> Seçilen forumdan ekran görüntüsü almak ve bağlantıları çekmek için <b>Ekran Görüntüsü Al </b>butonuna tıklayın. <br>
 Uygulama, ilgili foruma giderek son gönderiyi alacak ve bağlantısını <b>links.txt</b> dosyasına ekleyecektir.
