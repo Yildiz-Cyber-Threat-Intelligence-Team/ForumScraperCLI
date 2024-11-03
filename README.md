@@ -21,8 +21,7 @@ Bu proje Docker ile çalıştırılmak üzere yapılandırılmıştır. Docker, 
     Proje dizininde aşağıdaki komutu çalıştırarak Docker imajını oluşturun:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker-compose build
     
     ```
@@ -32,8 +31,7 @@ Bu proje Docker ile çalıştırılmak üzere yapılandırılmıştır. Docker, 
     Docker konteynerlerini arka planda çalıştırmak için:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker-compose up -d
     
     ```
@@ -47,8 +45,7 @@ Bu proje Docker ile çalıştırılmak üzere yapılandırılmıştır. Docker, 
     Konteynerlerin başarıyla çalıştığını doğrulamak için aşağıdaki komutla durumu kontrol edebilirsiniz:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker ps
     
     ```
@@ -58,8 +55,7 @@ Bu proje Docker ile çalıştırılmak üzere yapılandırılmıştır. Docker, 
     Ekran görüntüsü ve verilerin kaydedildiğinden emin olmak için `forum_monitoring_app` konteynerinin loglarını kontrol edin:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker logs forum_monitoring_app
     
     ```
@@ -70,8 +66,7 @@ Bu proje Docker ile çalıştırılmak üzere yapılandırılmıştır. Docker, 
 Docker üzerinde yukarıdaki adımları tamamladıktan sonra, proje dizininde aşağıdaki komutu kullanarak uygulamayı başlatabilirsiniz:
 
 ```bash
-bash
-Kodu kopyala
+
 go run main.go
 
 ```
