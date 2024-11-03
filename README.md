@@ -1,6 +1,5 @@
-# Untitled
+# ForumScraperCLI
 
-<h1>ForumScraperCLI</h1>
 
 **ForumScraperCLI**, otomatik forum izlemeye yönelik bir komut satırı aracıdır. En az 10 forumdaki gönderileri sıyırarak tartışmaları, konuları ve anahtar kelimeleri gerçek zamanlı olarak izler. Bu araç, forum gönderilerini toplama sürecini basitleştirir; istihbarat toplamak ve forum etkinlikleri hakkında güncel bilgi sahibi olmak için idealdir.
 
