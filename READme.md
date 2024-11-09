@@ -21,8 +21,7 @@ Bu proje, Docker ile çalışacak şekilde yapılandırılmıştır. Docker, ba�
     Proje dizininde aşağıdaki komutu çalıştırarak Docker imajını oluşturun:
     
     ```bash
-    bash
-    Kodu kopyala
+   
     docker-compose build
     
     ```
@@ -32,8 +31,7 @@ Bu proje, Docker ile çalışacak şekilde yapılandırılmıştır. Docker, ba�
     Docker konteynerlerini arka planda çalıştırmak için:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker-compose up -d --build
     
     ```
@@ -47,8 +45,7 @@ Bu proje, Docker ile çalışacak şekilde yapılandırılmıştır. Docker, ba�
     Konteynerlerin başarıyla çalıştığını doğrulamak için aşağıdaki komutla durumu kontrol edebilirsiniz:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker ps
     
     ```
@@ -58,8 +55,7 @@ Bu proje, Docker ile çalışacak şekilde yapılandırılmıştır. Docker, ba�
     Ekran görüntüsü ve verilerin kaydedildiğinden emin olmak için `forum_monitoring_app` konteynerinin loglarını kontrol edin:
     
     ```bash
-    bash
-    Kodu kopyala
+   
     docker logs forum_monitoring_app
     
     ```
@@ -69,14 +65,14 @@ Bu proje, Docker ile çalışacak şekilde yapılandırılmıştır. Docker, ba�
 
 Konteynerler çalışmaya başladıktan sonra, bir web tarayıcısında http://localhost:8080 adresine gidin. Bu adres, ForumScraperCLI arayüzüne erişmenizi sağlayacak, burada forum gönderilerini izlemeye ve ekran görüntüsü almaya başlayabilirsiniz.
 
-![https://www.notion.somenu.png](https://www.notion.somenu.png)
+<img src="menu.png" />
 
 ## Kullanım
 
 1. **Bir Forum Seçin**: Açılır menüden izlemek istediğiniz forumu seçin.
 2. **Ekran Görüntüsü Alın**: **Ekran Görüntüsü Al** butonuna tıklayın. Araç, seçilen foruma giderek sayfanın bir ekran görüntüsünü alır ve ekran görüntüsü başarıyla kaydedildiğinde bir başarı mesajı gösterir.
     
-    ![https://www.notion.sodocker.png](https://www.notion.sodocker.png)
+    <img src="save.png" />
     
 3. **Bağlantılara ve Ekran Görüntülerine Erişin**: Ekran görüntüleri ve sıyrılmış bağlantılar Docker konteyneri içinde saklanır. `forum_monitoring_app` konteyneri için Docker Desktop'ta **Files** sekmesine giderek `links.txt` dosyasını ve `screenshots` klasöründeki görselleri bulabilirsiniz.
 
