@@ -65,16 +65,17 @@ Bu proje, Docker ile çalışacak şekilde yapılandırılmıştır. Docker, ba�
 
 Konteynerler çalışmaya başladıktan sonra, bir web tarayıcısında http://localhost:8080 adresine gidin. Bu adres, ForumScraperCLI arayüzüne erişmenizi sağlayacak, burada forum gönderilerini izlemeye ve ekran görüntüsü almaya başlayabilirsiniz.
 
-<img src="menu.png" />
+   <img src="menu.png" />
 
 ## Kullanım
 
 1. **Bir Forum Seçin**: Açılır menüden izlemek istediğiniz forumu seçin.
 2. **Ekran Görüntüsü Alın**: **Ekran Görüntüsü Al** butonuna tıklayın. Araç, seçilen foruma giderek sayfanın bir ekran görüntüsünü alır ve ekran görüntüsü başarıyla kaydedildiğinde bir başarı mesajı gösterir.
     
-    <img src="save.png" />
+   <img src="save.png" />
     
 3. **Bağlantılara ve Ekran Görüntülerine Erişin**: Ekran görüntüleri ve sıyrılmış bağlantılar Docker konteyneri içinde saklanır. `forum_monitoring_app` konteyneri için Docker Desktop'ta **Files** sekmesine giderek `links.txt` dosyasını ve `screenshots` klasöründeki görselleri bulabilirsiniz.
+   <img src="docker.png" />
 
 ---
 
@@ -99,8 +100,7 @@ This project is configured to run with Docker. Docker simplifies dependency mana
     Run the following command in the project directory to build the Docker image:
     
     ```bash
-    bash
-    Kodu kopyala
+   
     docker-compose build
     
     ```
@@ -110,8 +110,7 @@ This project is configured to run with Docker. Docker simplifies dependency mana
     To run the Docker containers in the background:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker-compose up -d --build
     
     ```
@@ -125,8 +124,7 @@ This project is configured to run with Docker. Docker simplifies dependency mana
     To confirm the containers are running successfully, check their status with:
     
     ```bash
-    bash
-    Kodu kopyala
+   
     docker ps
     
     ```
@@ -136,8 +134,7 @@ This project is configured to run with Docker. Docker simplifies dependency mana
     To ensure screenshots and data are being saved, check the logs of the `forum_monitoring_app` container:
     
     ```bash
-    bash
-    Kodu kopyala
+    
     docker logs forum_monitoring_app
     
     ```
@@ -145,15 +142,17 @@ This project is configured to run with Docker. Docker simplifies dependency mana
 
 ### Accessing the Interface
 
-After the containers are up and running, open a web browser and go to http://localhost:8080. This will take you to the ForumScraperCLI interface, where you can begin monitoring forum posts and taking screenshots.
 
-![https://www.notion.somenu.png](https://www.notion.somenu.png)
+After the containers are up and running, open a web browser and go to http://localhost:8080. This will take you to the ForumScraperCLI interface, where you can begin monitoring forum posts and taking screenshots
+    <img src="eng-menu.png" />
+
+
 
 ## Usage
 
 1. **Select a Forum**: From the dropdown menu, choose the forum you want to monitor.
 2. **Take a Screenshot**: Click the **Take Screenshot** button. The tool will navigate to the selected forum, capture a screenshot of the page, and display a success message once the screenshot is saved.
     
-    ![https://www.notion.sodocker.png](https://www.notion.sodocker.png)
+   
     
 3. **Access Links and Screenshots**: Screenshots and scraped links are stored within the Docker container. You can access these files by navigating to the **Files** section in Docker Desktop for `forum_monitoring_app`. Look for `links.txt` for the latest scraped links and the `screenshots` directory for the images.
