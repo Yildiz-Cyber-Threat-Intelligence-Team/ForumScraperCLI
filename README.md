@@ -148,7 +148,6 @@ After the containers are up and running, open a web browser and go to http://loc
     <img src="eng-menu.png" />
 
 
-
 ## Usage
 
 1. **Select a Forum**: From the dropdown menu, choose the forum you want to monitor.
