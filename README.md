@@ -13,7 +13,7 @@
 
 ## Kurulum ve Docker Kullanımı
 
-Bu proje, Docker ile çalışacak şekilde yapılandırılmıştır. Docker, bağımlılıkların yönetimini basitleştirir ve aracı izole bir ortamda çalıştırmanıza olanak tanır.
+Bu proje Docker ile çalışacak şekilde yapılandırılmıştır. Docker, bağımlılıkların yönetimini basitleştirir ve aracı izole bir ortamda çalıştırmanıza olanak tanır.
 
 ### Docker ile Çalıştırma
 
